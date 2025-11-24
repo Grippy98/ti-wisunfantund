@@ -105,3 +105,26 @@ In development, you may run out of file watchers available on the system. This [
 # Notes
 
 The `ti-wisun-webapp/.vscode` directory has settings that can be helpful for developing with vscode
+
+# Deployment
+
+## Docker
+To build and run the webapp in a Docker container:
+
+1. Build the image:
+   ```bash
+   docker build -t ti-wisun-webapp .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 80:80 -d ti-wisun-webapp
+   ```
+   *Note: By default, this runs in "Dev Mode" (-d), which means it won't try to manage the `wfantund` service directly. This is suitable if `wfantund` is running in a separate container or on the host.*
+
+## Yocto / OpenEmbedded
+To include this webapp in your Yocto build:
+
+1. Copy `recipes-connectivity/ti-wisun-webapp/ti-wisun-webapp_git.bb` to your layer.
+2. Add `ti-wisun-webapp` to your image recipe or `local.conf`.
+3. Build your image.

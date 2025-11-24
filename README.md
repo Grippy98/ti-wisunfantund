@@ -352,4 +352,79 @@ Texas Instruments Inc
  *  Arjuna Siva
  *  Abtin Keshavarzian
 
+## Packaging and Portability
 
+### Production Docker Image
+To build a production-ready Docker image that is smaller and distributable (without source code):
+
+```bash
+docker build -f Dockerfile.prod -t wfantund:prod .
+```
+
+This image uses a multi-stage build to compile `wfantund` and copies only the necessary binaries and runtime dependencies to the final image.
+
+### Debian Packaging
+To build a native Debian package (`.deb`) for installation on Debian-based distributions (e.g., Ubuntu, Raspberry Pi OS, or TI AM62/AM64 Linux images):
+
+1. Ensure you have the build dependencies installed:
+   ```bash
+   sudo apt-get install debhelper autoconf autoconf-archive libtool libdbus-1-dev libboost-dev libreadline-dev libcoap2-bin
+   ```
+
+2. Run the package build command:
+   ```bash
+   dpkg-buildpackage -us -uc
+   ```
+
+This will generate a `.deb` file in the parent directory, which can be installed on your target device using `dpkg -i`.
+
+
+
+
+### Yocto / OpenEmbedded Integration
+To include `wfantund` in your Yocto build (e.g., for TI AM62/AM64 SDKs):
+
+1.  Copy the `recipes-connectivity/wfantund/wfantund_git.bb` file to your Yocto layer (e.g., `meta-ti/recipes-connectivity/wfantund/`).
+2.  Add `wfantund` to your image recipe or `local.conf`:
+    ```bitbake
+    IMAGE_INSTALL:append = " wfantund"
+    ```
+3.  Build your image:
+    ```bash
+    bitbake <your-image-name>
+    ```
+
+# Unified Deployment
+
+## Docker Compose (Recommended)
+To run the complete solution (Host App + Daemon + Webapp) in containers:
+
+```bash
+docker compose -f docker-compose.prod.yml up -d --build
+```
+This will start all three services in the correct order.
+
+
+## Debian Packages
+To build all components (`wfantund`, `wisun-rcp-host`, `ti-wisun-webapp`) and the unified metapackage in one go:
+
+1. Ensure you have all build dependencies:
+   ```bash
+   sudo apt-get install debhelper autoconf autoconf-archive libtool libdbus-1-dev libboost-dev libreadline-dev libcoap2-bin cmake ninja-build build-essential nodejs npm
+   ```
+
+2. Run the master build script:
+   ```bash
+   ./build_packages.sh
+   ```
+
+3. Install the unified package (which pulls in everything else):
+   ```bash
+   sudo dpkg -i ti-wisun-complete_*.deb wfantund_*.deb wisun-rcp-host_*.deb ti-wisun-webapp_*.deb
+   ```
+
+## Yocto Packagegroup
+To install everything in your Yocto image, add the packagegroup to your image recipe:
+```bitbake
+IMAGE_INSTALL:append = " packagegroup-ti-wisun"
+```

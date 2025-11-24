@@ -1,0 +1,14 @@
+Source: wisun-rcp-host
+Section: net
+Priority: optional
+Maintainer: Texas Instruments <support@ti.com>
+Build-Depends: debhelper (>= 10), cmake, ninja-build, build-essential
+Standards-Version: 4.1.2
+Homepage: https://github.com/TexasInstruments/ti-wisunfantund
+
+Package: wisun-rcp-host
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: TI Wi-SUN FAN RCP Host Application
+ Linux Host application for TI Wi-SUN FAN Border Router, designed to connect
+ to a TI device running the RCP LMAC Firmware.

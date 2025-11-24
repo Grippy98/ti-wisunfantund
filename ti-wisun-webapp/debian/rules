@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	cd client && npm install && npm run build
+	cd server && npm install --production
+
+override_dh_auto_install:
+	mkdir -p debian/ti-wisun-webapp/usr/share/ti-wisun-webapp
+	cp -r client debian/ti-wisun-webapp/usr/share/ti-wisun-webapp/
+	cp -r server debian/ti-wisun-webapp/usr/share/ti-wisun-webapp/
+	cp -r resources debian/ti-wisun-webapp/usr/share/ti-wisun-webapp/
+	
+	# Install systemd service
+	mkdir -p debian/ti-wisun-webapp/lib/systemd/system
+	echo "[Unit]" > debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "Description=TI Wi-SUN FAN Web Application" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "After=network.target wfantund.service" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "[Service]" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "Type=simple" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "ExecStart=/usr/bin/node /usr/share/ti-wisun-webapp/server/src/index.js" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "Restart=always" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "Environment=NODE_ENV=production" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "[Install]" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service
+	echo "WantedBy=multi-user.target" >> debian/ti-wisun-webapp/lib/systemd/system/ti-wisun-webapp.service

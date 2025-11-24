@@ -1,0 +1,13 @@
+Source: ti-wisun-webapp
+Section: web
+Priority: optional
+Maintainer: Texas Instruments <support@ti.com>
+Build-Depends: debhelper (>= 10), nodejs, npm
+Standards-Version: 4.1.2
+Homepage: https://github.com/TexasInstruments/ti-wisunfantund
+
+Package: ti-wisun-webapp
+Architecture: all
+Depends: ${misc:Depends}, nodejs, bash
+Description: TI Wi-SUN FAN Web Application
+ Web application for configuring and monitoring TI Wi-SUN FAN Border Router.

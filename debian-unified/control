@@ -1,0 +1,16 @@
+Source: ti-wisun-complete
+Section: net
+Priority: optional
+Maintainer: Texas Instruments <support@ti.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: https://github.com/TexasInstruments/ti-wisunfantund
+
+Package: ti-wisun-complete
+Architecture: any
+Depends: wfantund, wisun-rcp-host, ti-wisun-webapp
+Description: Complete TI Wi-SUN FAN Solution
+ Metapackage that installs the complete TI Wi-SUN FAN solution, including:
+ - wisun-rcp-host: Hardware abstraction layer
+ - wfantund: Network daemon
+ - ti-wisun-webapp: Web-based configuration UI

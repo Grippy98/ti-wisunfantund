@@ -1,0 +1,57 @@
+services:
+  # 1. RCP Host (Hardware Abstraction)
+  wisun-rcp-host:
+    build:
+      context: ./linux-host
+      dockerfile: Dockerfile.prod
+    container_name: wisun-rcp-host
+    restart: unless-stopped
+    privileged: true # Required for USB access
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0 # Update this to match your actual device
+    networks:
+      - wisun-net
+
+  # 2. Network Daemon (Logic)
+  wfantund:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: wfantund
+    restart: unless-stopped
+    depends_on:
+      - wisun-rcp-host
+    privileged: true # Required for TUN interface
+    command:
+      - "-o"
+      - "Config:NCP:SocketPath"
+      - "tcp:wisun-rcp-host:4902"
+      - "-o"
+      - "IPv6:WfantundGlobalAddress"
+      - "2020:ABCD::/64"
+    networks:
+      - wisun-net
+
+  # 3. Web Application (UI)
+  ti-wisun-webapp:
+    build:
+      context: ./ti-wisun-webapp
+      dockerfile: Dockerfile
+    container_name: ti-wisun-webapp
+    restart: unless-stopped
+    depends_on:
+      - wfantund
+    ports:
+      - "80:80"
+    # Override default CMD to remove -d flag so it connects to wfantund
+    # Note: The webapp needs to be updated to support connecting to wfantund over network if it doesn't already.
+    # Assuming webapp connects via DBus or similar, which might need shared volume or network config.
+    # For now, keeping it simple. If webapp relies on local DBus, we might need to share the DBus socket.
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+    networks:
+      - wisun-net
+
+networks:
+  wisun-net:
+    driver: bridge

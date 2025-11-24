@@ -1,0 +1,43 @@
+# Stage 1: Builder
+FROM ubuntu:22.04 AS builder
+
+# Install build dependencies
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    ninja-build \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy source code
+COPY . .
+
+# Fetch TI SimpleLink SDK (Required for build)
+# Cloning into the expected directory structure
+RUN git clone --depth 1 https://github.com/TexasInstruments/simplelink-lowpower-f2-sdk.git src/lprf-dallas-wisunfan
+
+# Build wisun-rcp-host
+RUN cmake -G Ninja . && \
+    ninja
+
+# Stage 2: Runtime
+FROM ubuntu:22.04
+
+# Install runtime dependencies
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y \
+    libstdc++6 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy compiled binary
+COPY --from=builder /app/bin/wisun-rcp-host /usr/bin/wisun-rcp-host
+COPY --from=builder /app/apps/border_router_nanostack_tirf/border_router_host.cfg /etc/wisun-rcp-host.cfg
+
+# Set entrypoint
+ENTRYPOINT ["/usr/bin/wisun-rcp-host"]
+CMD ["/etc/wisun-rcp-host.cfg"]
