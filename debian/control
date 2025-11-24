@@ -2,14 +2,14 @@ Source: wfantund
 Section: net
 Priority: optional
 Maintainer: Texas Instruments <support@ti.com>
-Build-Depends: debhelper (>= 10), autoconf, autoconf-archive, libtool, libdbus-1-dev, libboost-dev, libreadline-dev, libcoap2-bin
+Build-Depends: debhelper (>= 10), autoconf, autoconf-archive, libtool, libdbus-1-dev, libboost-dev, libreadline-dev, libcoap3-dev
 Standards-Version: 4.1.2
 Homepage: https://github.com/TexasInstruments/ti-wisunfantund
 
 Package: wfantund
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, dbus, libreadline8, libcoap2
-Description: Userspace Wireless Field Area Network (WFAN) Network Daemon
- wfantund is a user-space network interface driver/daemon that provides a
+Depends: ${shlibs:Depends}, ${misc:Depends}, dbus, libreadline8, libcoap3-bin, net-tools, iproute2
+Description: TI Wi-SUN FAN Network Daemon
+ User-space network interface driver for TI Wi-SUN FAN Border Router.
  native IPv6 network interface to TI Wi-SUN FAN Border Router operating in
  Network Processor (NWP) mode.
