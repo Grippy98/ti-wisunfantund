@@ -410,7 +410,7 @@ To build all components (`wfantund`, `wisun-rcp-host`, `ti-wisun-webapp`) and th
 
 1. Ensure you have all build dependencies:
    ```bash
-   sudo apt-get install debhelper autoconf autoconf-archive libtool libdbus-1-dev libboost-dev libreadline-dev libcoap3-dev cmake ninja-build build-essential nodejs npm
+   sudo apt-get install debhelper autoconf autoconf-archive libtool libdbus-1-dev libboost-dev libreadline-dev libcoap3-dev cmake ninja-build build-essential nodejs npm fakeroot
    ```
 
 2. Run the master build script:
