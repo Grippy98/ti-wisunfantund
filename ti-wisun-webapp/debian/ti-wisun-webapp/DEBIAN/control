@@ -1,0 +1,11 @@
+Package: ti-wisun-webapp
+Version: 1.0.0-1
+Architecture: all
+Maintainer: Texas Instruments <support@ti.com>
+Installed-Size: 336649
+Depends: nodejs, bash
+Section: web
+Priority: optional
+Homepage: https://github.com/TexasInstruments/ti-wisunfantund
+Description: TI Wi-SUN FAN Web Application
+ Web application for configuring and monitoring TI Wi-SUN FAN Border Router.

@@ -1,0 +1,13 @@
+Package: wisun-rcp-host-dbgsym
+Package-Type: ddeb
+Source: wisun-rcp-host
+Version: 1.0.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Texas Instruments <support@ti.com>
+Installed-Size: 3134
+Depends: wisun-rcp-host (= 1.0.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for wisun-rcp-host
+Build-Ids: d4372d95d957d4f1c3ab43fcb5bb35f81eb347ee

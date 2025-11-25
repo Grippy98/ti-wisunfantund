@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Mon, 24 Nov 2025 12:00:00 +0000
+Source: wisun-rcp-host
+Binary: wisun-rcp-host
+Built-For-Profiles: noudeb
+Architecture: source amd64
+Version: 1.0.0-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Texas Instruments <support@ti.com>
+Changed-By: Texas Instruments <support@ti.com>
+Description:
+ wisun-rcp-host - TI Wi-SUN FAN RCP Host Application
+Changes:
+ wisun-rcp-host (1.0.0-1) unstable; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 6987cbd2ed1ae18c535e8347c95bd029b5934e56 659 wisun-rcp-host_1.0.0-1.dsc
+ db8b5c0be753237cf338aafecf272ab316158d14 1173879336 wisun-rcp-host_1.0.0-1.tar.gz
+ 8eee0642c2be220ea00f73b68c954bd58e8a408c 2785388 wisun-rcp-host-dbgsym_1.0.0-1_amd64.ddeb
+ 2216822eb40d33cb76cfba927a208db4f3961878 7421 wisun-rcp-host_1.0.0-1_amd64.buildinfo
+ 560038b25c250e41df727c0ad5971103688a24bc 420516 wisun-rcp-host_1.0.0-1_amd64.deb
+Checksums-Sha256:
+ 31ef119bd33fec4770b92946fb74272fedb05094e2b28e9b4b4e34a5883300e1 659 wisun-rcp-host_1.0.0-1.dsc
+ c38bd7730baa7badf6602d1da3a765f62eac6315b484d5aff409466173e8abf6 1173879336 wisun-rcp-host_1.0.0-1.tar.gz
+ 9881dd7ed3fd9b3f76117ec9389f07af957cb22a0f447e1fc530de89778df571 2785388 wisun-rcp-host-dbgsym_1.0.0-1_amd64.ddeb
+ 04c045fce622c0a4d4d139ec20af915a360d68f6196149b749a502f382b1e8d6 7421 wisun-rcp-host_1.0.0-1_amd64.buildinfo
+ d3afa34226cbfb14aa621c560db5ca957593bc1069900f4fc7beeec82ab34076 420516 wisun-rcp-host_1.0.0-1_amd64.deb
+Files:
+ 683e88dd944674c7ce6c2052089c086f 659 net optional wisun-rcp-host_1.0.0-1.dsc
+ d43d47298346767e34cad73aca5809d9 1173879336 net optional wisun-rcp-host_1.0.0-1.tar.gz
+ b7dacf407dce4aba3befaf1fa5d289d2 2785388 debug optional wisun-rcp-host-dbgsym_1.0.0-1_amd64.ddeb
+ 7001b1410b704e2b4b8c3e60b0e445e6 7421 net optional wisun-rcp-host_1.0.0-1_amd64.buildinfo
+ c455ed479dac30e3d8790c806a356cf1 420516 net optional wisun-rcp-host_1.0.0-1_amd64.deb

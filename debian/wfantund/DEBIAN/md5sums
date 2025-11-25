@@ -1,0 +1,14 @@
+211b6694bb03150baaa37199809cee9d  usr/bin/spi-hdlc-adapter
+5e249b06cb65b911ad6bb190e1774a1b  usr/bin/wfanctl
+7054a0ab292e80dffc10b14af476ce7d  usr/include/wpantund/wpan-dbus.h
+d0ef393276c23cebbf977771d10950f5  usr/include/wpantund/wpan-error.h
+d17cb53890a1e3af01bfd51b900892eb  usr/include/wpantund/wpan-properties.h
+68db6a8ec643a209996c9c222905763f  usr/lib/x86_64-linux-gnu/wpantund/ncp-dummy.la
+b2df5805809df3aae1d101e189ef4f78  usr/lib/x86_64-linux-gnu/wpantund/ncp-dummy.so
+0327c5f9c52b5a3a45d574cd0b280f93  usr/lib/x86_64-linux-gnu/wpantund/ncp-spinel.la
+30ed9562562465b4988f3c6f5f233eb6  usr/lib/x86_64-linux-gnu/wpantund/ncp-spinel.so
+4a9684ffd3ace055a1216550dcd2afeb  usr/sbin/wfantund
+64f21ee7576eac948091dbb2dba60433  usr/share/doc/wfantund/changelog.Debian.gz
+b8e339e587b29427f06fafd2416cee6b  usr/share/man/man1/wpanctl.1.gz
+74de2bb8564ba05c72c21f724b656d8c  usr/share/man/man1/wpantund.1.gz
+6f231bbee82dc67b8c930c616d304d23  usr/share/wpantund/wpanretain.sh

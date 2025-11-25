@@ -4,7 +4,7 @@
 	dh $@
 
 override_dh_auto_build:
-	cd client && npm install && npm run build
+	cd client && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build
 	cd server && npm install --production
 
 override_dh_auto_install:

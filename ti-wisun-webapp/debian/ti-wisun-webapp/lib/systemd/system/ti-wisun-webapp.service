@@ -1,0 +1,12 @@
+[Unit]
+Description=TI Wi-SUN FAN Web Application
+After=network.target wfantund.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /usr/share/ti-wisun-webapp/server/src/index.js
+Restart=always
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Mon, 24 Nov 2025 12:00:00 +0000
+Source: ti-wisun-complete
+Binary: ti-wisun-complete
+Built-For-Profiles: noudeb
+Architecture: source amd64
+Version: 1.0.0-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Texas Instruments <support@ti.com>
+Changed-By: Texas Instruments <support@ti.com>
+Description:
+ ti-wisun-complete - Complete TI Wi-SUN FAN Solution
+Changes:
+ ti-wisun-complete (1.0.0-1) unstable; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 9d97fa6af05da0d75b9e35962198d5b5a1d98e82 619 ti-wisun-complete_1.0.0-1.dsc
+ 6f8d370f0592a83456e9fa8e77d4fe0a8dc34266 697 ti-wisun-complete_1.0.0-1.tar.gz
+ 34deb9d217ba6d497ff063e137f5274ac68651c5 5927 ti-wisun-complete_1.0.0-1_amd64.buildinfo
+ 0f85a3b05980cf03958ee59d7b5a3896ec4a56aa 1038 ti-wisun-complete_1.0.0-1_amd64.deb
+Checksums-Sha256:
+ 67b28d59b58c5f7ee1af48630ffbfdcf2f5b003c43f6003bfc55ffea30d58edc 619 ti-wisun-complete_1.0.0-1.dsc
+ 127eeb152f35261851528ec1c2dadd5ff9c43e74a1e9396fdd55aecaca87ce9d 697 ti-wisun-complete_1.0.0-1.tar.gz
+ 09d24ddb08572de3b8e04a85e0d4ed277bbd382daec95bc55f4ac9b655f23404 5927 ti-wisun-complete_1.0.0-1_amd64.buildinfo
+ 0a128ddfc8732cfc22602f6565f8f3e101753600803f71300fb8f1511969b277 1038 ti-wisun-complete_1.0.0-1_amd64.deb
+Files:
+ 63386aab49f26a2b22096d274fab6231 619 net optional ti-wisun-complete_1.0.0-1.dsc
+ ca76097a999428ede90a8477f8b4f8a3 697 net optional ti-wisun-complete_1.0.0-1.tar.gz
+ 429ea7e25ab7e6516ec068d0d524c6eb 5927 net optional ti-wisun-complete_1.0.0-1_amd64.buildinfo
+ 1ca46e890a70e188a4ff510cdb03c912 1038 net optional ti-wisun-complete_1.0.0-1_amd64.deb

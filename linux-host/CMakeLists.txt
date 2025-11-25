@@ -198,3 +198,10 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${ti_wisunfan_nanostack_inclu
 
 # Link any libraries or dependencies
 target_link_libraries(${PROJECT_NAME} ${LIBRARIES} nanostack)
+
+# Install the executable
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
+# Install the configuration file
+install(FILES apps/border_router_nanostack_tirf/border_router_host.cfg DESTINATION etc RENAME wisun-rcp-host.cfg)
+

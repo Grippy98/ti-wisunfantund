@@ -1,6 +1,25 @@
 #!/bin/bash
 set -e
 
+echo "Installing build dependencies..."
+sudo apt-get update
+sudo apt-get install -y \
+    debhelper \
+    autoconf \
+    autoconf-archive \
+    libtool \
+    libdbus-1-dev \
+    libboost-dev \
+    libreadline-dev \
+    libcoap3-dev \
+    cmake \
+    ninja-build \
+    build-essential \
+    nodejs \
+    npm \
+    git
+
+
 echo "Building wfantund..."
 dpkg-buildpackage -us -uc
 

@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Mon, 24 Nov 2025 12:00:00 +0000
+Source: ti-wisun-webapp
+Binary: ti-wisun-webapp
+Built-For-Profiles: noudeb
+Architecture: source all
+Version: 1.0.0-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Texas Instruments <support@ti.com>
+Changed-By: Texas Instruments <support@ti.com>
+Description:
+ ti-wisun-webapp - TI Wi-SUN FAN Web Application
+Changes:
+ ti-wisun-webapp (1.0.0-1) unstable; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ faa6c00be5ed9de11a79a4de05d3c954fbbe5a43 635 ti-wisun-webapp_1.0.0-1.dsc
+ 27f79f12a7aa911ba34d5bbe4a02453ab5c5ef8a 70917034 ti-wisun-webapp_1.0.0-1.tar.gz
+ 2ff082e57c7322803d38408b60c710d207642db9 43019308 ti-wisun-webapp_1.0.0-1_all.deb
+ 2f3ada71aba79d093c57e48ce4785309b8ae3ae7 19782 ti-wisun-webapp_1.0.0-1_amd64.buildinfo
+Checksums-Sha256:
+ c825ad0605e04552546cb63dec223fc92a4e71c3597f497c57975e4e1dcf04e6 635 ti-wisun-webapp_1.0.0-1.dsc
+ b21a7b45ca77b2ec75ef4fe542afb4af67767602bb1e9df4d730af25691778f4 70917034 ti-wisun-webapp_1.0.0-1.tar.gz
+ 90c9a7091f782aedfa4d918d5afc1767c6f9444711f5e0f228f2df1e1312bb3c 43019308 ti-wisun-webapp_1.0.0-1_all.deb
+ fc88de3257c3e6a696fc09c7058dea06e8492f944cddce22b10c9ef6acdbb527 19782 ti-wisun-webapp_1.0.0-1_amd64.buildinfo
+Files:
+ 317e785eadc30b07bc602c52c03b21be 635 web optional ti-wisun-webapp_1.0.0-1.dsc
+ 4f3029b359744c4b23316d38852b3235 70917034 web optional ti-wisun-webapp_1.0.0-1.tar.gz
+ f0890a2982122f9fb362b0c439587585 43019308 web optional ti-wisun-webapp_1.0.0-1_all.deb
+ be697502059a3739384c6e80f32a63b7 19782 web optional ti-wisun-webapp_1.0.0-1_amd64.buildinfo
